@@ -13,7 +13,7 @@
 
 
 <!-- 
-################ Useful refs for image upload field ################
+################ Useful refs for image upload field ##################
 PREVIEW BEFORE UPLAOD
 codepen.io/TimKaechele/pen/zFkuL?editors=101
 
@@ -29,7 +29,6 @@ blueimp.github.io/jQuery-File-Upload
     <%= f.text_field :title %>
   </div>
    <div class="form-group">
-    <%= f.input :image, :as => :file, :hint => image_tag(f.object.image.url) %>
     <%= f.label :image %><br>
     <%= f.file_field :image %>
    </div>
