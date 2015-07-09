@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
-
+  
   respond_to :html
 
   def index
@@ -42,6 +42,6 @@ class PagesController < ApplicationController
     end
 
     def page_params
-      params.require(:page).permit(:title, :text_content)
+      params.require(:page).permit(:title, :text_content, :url_key)
     end
 end
