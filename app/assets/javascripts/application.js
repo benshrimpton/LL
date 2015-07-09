@@ -15,3 +15,14 @@
 //= require turbolinks
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
+
+
+
+
+function finished(){
+  console.log("logg message")
+  $('.alert-success').delay(2000).fadeOut(600);  
+}
+
+
+$(document).on("ready page:load", finished);;

@@ -1,20 +1,17 @@
 -if user_signed_in?
-  %p Current User
-  %p= current_user.email
-  %span= current_user.id 
   
-  %h4 Recently Uplaod Photos 
+  %h4 Recently Uploaded Photos 
   - @photos.take(16).each do |p|
     = image_tag p.image.url(:thumb)
       
-      
+  %hr     
     
   %h4 Pages
   -if @pages.any?
     - @pages.each do |p|
       = p.title
   - else
-    Add some pages...!    
+    Your have no pages, why not add some...!    
    
   %hr 
    
@@ -22,19 +19,21 @@
   - if @albums.any?
     - @albums.each do |a|
       = a.title
-    
+  - else
+    Your have no albums, why not add some...!    
+       
   %hr  
   
   %h4 Portfolios 
-  - @portfolios.each do |port|
-    = port.title
+  - if @portfolios.any?
+    - @portfolios.each do |port|
+      = port.title
+  - else
+    Your have no portfolios, why not add some...!      
     
   %hr  
   
-  %h4 Settings 
-  = @settings.facebook_name
-  = @settings.twitter_name
-  = @settings.instagram_name
+
   
 - else 
   %h2 You must be logged in to view this page
