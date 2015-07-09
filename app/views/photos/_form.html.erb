@@ -11,12 +11,25 @@
     </div>
   <% end %>
 
+
+<!-- 
+################ Useful refs for image upload field ################
+PREVIEW BEFORE UPLAOD
+codepen.io/TimKaechele/pen/zFkuL?editors=101
+
+MULTIPLE UPLOAD
+railscook.com/recipes/multiple-files-upload-with-nested-resource-using-paperclip-in-rails/
+
+JQURY FILE UPLOAD
+blueimp.github.io/jQuery-File-Upload
+######################################################################
+-->
   <div class="form-group">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
    <div class="form-group">
-    <%= f.image.url(:thumb) %><br>
+    <%= f.input :image, :as => :file, :hint => image_tag(f.object.image.url) %>
     <%= f.label :image %><br>
     <%= f.file_field :image %>
    </div>
