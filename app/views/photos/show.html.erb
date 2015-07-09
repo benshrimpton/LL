@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @photo.title %>
+  <br>
+  <%= image_tag @photo.image.url(:medium) %>
 </p>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |

@@ -1,8 +1,14 @@
 -if user_signed_in?
   %p Current User
   %p= current_user.email
-
-.container
+  %span= current_user.id 
+  
+  %h4 Recently Uplaod Photos 
+  - @photos.take(16).each do |p|
+    = image_tag p.image.url(:thumb)
+      
+      
+    
   %h4 Pages
   -if @pages.any?
     - @pages.each do |p|
@@ -30,7 +36,6 @@
   = @settings.twitter_name
   = @settings.instagram_name
   
-  %hr
-  - @photos.each do |p|
-    = image_tag p.image.url(:thumb)
+- else 
+  %h2 You must be logged in to view this page
   

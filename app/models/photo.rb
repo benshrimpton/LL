@@ -5,4 +5,6 @@ class Photo < ActiveRecord::Base
   belongs_to :album
   belongs_to :portfolio
   belongs_to :user
+  
+  accepts_nested_attributes_for :user, :portfolio, :album
 end

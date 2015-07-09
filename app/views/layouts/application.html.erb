@@ -26,7 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">LIGHTLUX</a>
+      <a class="navbar-brand" href="/">L</a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
@@ -42,12 +42,13 @@
     </div><!--/.nav-collapse -->
   </div>
 </nav>      
-      
+<% if user_signed_in? %>     
 <section class="container-fluid">
   <section class="row">
     
     <div class="col-sm-2 sidebar">
       <ul class="nav nav-sidebar">
+        <li><a href="/">Home</a></li>
         <li><a href="/portfolios">Portfolios</a></li>
         <li><a href="/albums">Albums</a></li>
         <li><a href="/photos">Photos</a></li>
@@ -56,17 +57,12 @@
         <li><a href="/navs">Navigation</a></li>
       </ul>
     </div>    
-    
-    
-
-    
-    
+<% end %>       
     <main class="col-sm-10">
     <%= yield %>
     </main>
     
   </section>
-</section>  
-  
+</section> 
 </body>
 </html>
