@@ -1,0 +1,36 @@
+-if user_signed_in?
+  %p Current User
+  %p= current_user.email
+
+.container
+  %h4 Pages
+  -if @pages.any?
+    - @pages.each do |p|
+      = p.title
+  - else
+    Add some pages...!    
+   
+  %hr 
+   
+  %h4 Albums
+  - if @albums.any?
+    - @albums.each do |a|
+      = a.title
+    
+  %hr  
+  
+  %h4 Portfolios 
+  - @portfolios.each do |port|
+    = port.title
+    
+  %hr  
+  
+  %h4 Settings 
+  = @settings.facebook_name
+  = @settings.twitter_name
+  = @settings.instagram_name
+  
+  %hr
+  - @photos.each do |p|
+    = image_tag p.image.url(:thumb)
+  

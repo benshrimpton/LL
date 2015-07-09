@@ -1,0 +1,24 @@
+%h1 Listing navs
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Title
+      %th
+      %th
+      %th
+
+  %tbody
+    - @navs.each do |nav|
+      %tr
+        %td
+          %h3= nav.title
+        %td= link_to 'Show', nav
+        %td= link_to 'Edit', edit_nav_path(nav)
+        %td= link_to 'Destroy', nav, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+- if @navs.any?
+  %pre You have already created your nav
+- else  
+  = link_to 'New Nav', new_nav_path
