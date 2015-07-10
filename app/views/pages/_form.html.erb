@@ -11,16 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
+    <label>User ID is in a hidden field here</label>
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
-    <%= f.text_field :url_key %>
+    <%= f.text_field :title,class: "form-control" %>
+    <%= f.text_field :url_key,class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :text_content %><br>
-    <%= f.text_area :text_content,:class => "wysihtml5" %>
+  <div class="form-group">
+    <%= f.label :text_content %>
+    <%= f.text_area :text_content,:class => "wysihtml5 form-control" %>
   </div>  
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group actions">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

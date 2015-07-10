@@ -1,8 +1,13 @@
 -if user_signed_in?
+  .page-header
+    = current_user.email
+    = current_user.id 
+  
   
   %h4 Recently Uploaded Photos 
-  - @photos.take(16).each do |p|
-    = image_tag p.image.url(:thumb)
+  -if @photos.any?
+    - @photos.take(16).each do |p|
+      = image_tag p.image.url(:thumb)
       
   %hr     
     
@@ -32,9 +37,7 @@
     Your have no portfolios, why not add some...!      
     
   %hr  
-  
-
-  
+   
 - else 
   %h2 You must be logged in to view this page
   

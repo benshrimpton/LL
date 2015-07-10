@@ -22,6 +22,7 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.new(page_params)
+    @page.user = current_user
     @page.save
     respond_with(@page)
   end
@@ -42,6 +43,6 @@ class PagesController < ApplicationController
     end
 
     def page_params
-      params.require(:page).permit(:title, :text_content, :url_key)
+      params.require(:page).permit(:title, :text_content, :url_key, :user_id )
     end
 end

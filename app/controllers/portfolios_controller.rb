@@ -25,6 +25,7 @@ class PortfoliosController < ApplicationController
   # POST /portfolios.json
   def create
     @portfolio = Portfolio.new(portfolio_params)
+    @portfolio.user = current_user
 
     respond_to do |format|
       if @portfolio.save
@@ -69,6 +70,6 @@ class PortfoliosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def portfolio_params
-      params.require(:portfolio).permit(:title, :url_key)
+      params.require(:portfolio).permit(:title, :url_key, :user_id)
     end
 end

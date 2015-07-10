@@ -11,20 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709210446) do
+ActiveRecord::Schema.define(version: 20150710134530) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "url_key"
+    t.integer  "user_id"
   end
+
+  add_index "albums", ["user_id"], name: "index_albums_on_user_id"
 
   create_table "navs", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "navs", ["user_id"], name: "index_navs_on_user_id"
 
   create_table "pages", force: true do |t|
     t.datetime "created_at"
@@ -32,7 +38,10 @@ ActiveRecord::Schema.define(version: 20150709210446) do
     t.text     "title"
     t.text     "text_content"
     t.text     "url_key"
+    t.integer  "user_id"
   end
+
+  add_index "pages", ["user_id"], name: "index_pages_on_user_id"
 
   create_table "photos", force: true do |t|
     t.string   "title"
@@ -43,8 +52,12 @@ ActiveRecord::Schema.define(version: 20150709210446) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+    t.integer  "album_id"
+    t.integer  "portfolios_id"
   end
 
+  add_index "photos", ["album_id"], name: "index_photos_on_album_id"
+  add_index "photos", ["portfolios_id"], name: "index_photos_on_portfolios_id"
   add_index "photos", ["user_id"], name: "index_photos_on_user_id"
 
   create_table "portfolios", force: true do |t|
@@ -52,7 +65,12 @@ ActiveRecord::Schema.define(version: 20150709210446) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "url_key"
+    t.integer  "user_id"
+    t.integer  "album_id"
   end
+
+  add_index "portfolios", ["album_id"], name: "index_portfolios_on_album_id"
+  add_index "portfolios", ["user_id"], name: "index_portfolios_on_user_id"
 
   create_table "settings", force: true do |t|
     t.string   "title"
@@ -62,7 +80,10 @@ ActiveRecord::Schema.define(version: 20150709210446) do
     t.text     "instagram_name"
     t.text     "twitter_name"
     t.text     "google_analytics"
+    t.integer  "user_id"
   end
+
+  add_index "settings", ["user_id"], name: "index_settings_on_user_id"
 
   create_table "users", force: true do |t|
     t.datetime "created_at"

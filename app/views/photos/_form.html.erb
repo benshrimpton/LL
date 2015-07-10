@@ -25,17 +25,15 @@ JQURY FILE UPLOAD
 blueimp.github.io/jQuery-File-Upload
 ######################################################################
 -->
-  <div class="form-group">
-    <pre>Current user id :  "<%= current_user.id %>"</pre>
-    <pre>Current user Email/User Name is :  "<%= current_user.email %>"</pre>
-  </div>
+
+  
   <div class="form-group">
   
   
   </div>
   <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => "form-control" %>
   </div>
    <div class="form-group">
     <%= f.label :image %><br>

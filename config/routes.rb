@@ -18,6 +18,11 @@ Rails.application.routes.draw do
 
   resources :albums
   
+  
+  get 'admin' => 'admin#index'
+  get 'admin/portfolios' => 'portfolios#index'
+  get 'admin/portfolios/:id/edit' => 'portfolios#update'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

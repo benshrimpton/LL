@@ -1,15 +1,16 @@
-<section class="row">
-  <h2>Photos</h2>
-  <%= link_to 'New Photo', new_photo_path %>
-</section>
+<header class="page-header">
+  <h2 class="pull-left">Photos</h2>
+  <%= link_to '+ New Photo', new_photo_path,:class => "btn btn-primary pull-right" %>
+  <div class="clear"/>
+</header>
 
 <section class="row">
   <% @photos.each do |photo| %>
     <figure class="col-sm-2">
-     <%= image_tag photo.image.url(:thumb) %>
+      <%= image_tag photo.image.url(:thumb) %>
      <figcaption>
       <div class="actions">
-        <b><%= photo.title %></b>
+        <b><%= photo.title %></b><br>
         <%= link_to 'Show', photo %>
         <%= link_to 'Edit', edit_photo_path(photo) %>
         <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>

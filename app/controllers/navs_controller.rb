@@ -22,6 +22,7 @@ class NavsController < ApplicationController
 
   def create
     @nav = Nav.new(nav_params)
+    @nav.user = current_user
     @nav.save
     respond_with(@nav)
   end
@@ -42,6 +43,6 @@ class NavsController < ApplicationController
     end
 
     def nav_params
-      params.require(:nav).permit(:title)
+      params.require(:nav).permit(:title, :user_id)
     end
 end
