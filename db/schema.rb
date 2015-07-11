@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710135322) do
+ActiveRecord::Schema.define(version: 20150711134821) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150710135322) do
     t.integer  "album_id"
     t.integer  "portfolios_id"
     t.integer  "pages_id"
+    t.boolean  "inactive",           default: false, null: false
   end
 
   add_index "photos", ["album_id"], name: "index_photos_on_album_id"

@@ -25,6 +25,7 @@ class SettingsController < ApplicationController
   # POST /settings.json
   def create
     @setting = Setting.new(setting_params)
+    @setting.title = 'nav'
     @setting.user = current_user
 
     respond_to do |format|
@@ -70,6 +71,6 @@ class SettingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def setting_params
-      params.require(:setting).permit(:title, :user_id)
+      params.require(:setting).permit(:title, :user_id, :twitter_name, :facebook_name, :instagram_name, :google_analytics)
     end
 end

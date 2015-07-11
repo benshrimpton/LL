@@ -1,0 +1,10 @@
+- if @settings.any?
+  = @settings.each do |s|
+    %P ID: #{s.id}
+    %P Facebook : #{s.facebook_name}
+    %P Instragram : #{s.instagram_name}
+    %P Twitter : #{s.twitter_name}
+    %P GA : #{s.google_analytics}
+- else
+  = link_to '+ New Setting', new_setting_path, :class => "btn btn-primary"
+  

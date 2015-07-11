@@ -8,6 +8,12 @@
   <% @photos.each do |photo| %>
     <figure class="col-sm-2">
       <%= image_tag photo.image.url(:thumb) %>
+      <% if photo.inactive == false %>
+      active
+      <% else %>
+      inactive
+      <% end %>
+       
      <figcaption>
       <div class="actions">
         <b><%= photo.title %></b><br>
