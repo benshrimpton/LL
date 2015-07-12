@@ -3,8 +3,8 @@
   %section.col-sm-3
     %h4 Recently Uploaded Photos
     -if @photos.any?
-      - @photos.take(16).each do |p|
-        = image_tag p.image.url(:thumb)
+      - @photos.take(6).each do |p|
+        = image_tag p.image.url(:thumb), class: "img-responsive"
 
   %section.col-sm-3
     %h4 Pages
@@ -24,7 +24,7 @@
         %h6= a.title
         = link_to 'Edit', edit_album_path(a)
       %hr
-      = link_to 'View All My Albums', albums_path, class: "btn btn-primary btn-wide btn-embossed clear"        
+      = link_to 'View All My Albums', albums_path, class: "btn btn-primary btn-wide btn-embossed clear"
 
     - else
       Your have no albums, why not add some...!

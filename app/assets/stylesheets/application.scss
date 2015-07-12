@@ -37,8 +37,8 @@ textarea {
   min-height: 200px;
 }
 .sidebar {
-  background: black;
-  color: white;
+  background: #31373d;
+  color: #c3cfd8;
   position: fixed;
   left: 0;
   top:53px;
@@ -46,7 +46,25 @@ textarea {
   width: 200px;
   margin: 0;
   padding: 0;
+  font-size: 13px;
 }
 main {
   margin-left: 200px;
+}
+
+
+/*PHOTOS ADMIN*/
+.photo {
+  background: #f5f5f5;
+  padding: 15px;
+}
+.photo.inactive {
+  background: #ddd;
+  opacity: 0.5;
+  img {
+    opacity: 0.5;
+  }
+  &:hover {
+    opacity: 1;
+  }
 }

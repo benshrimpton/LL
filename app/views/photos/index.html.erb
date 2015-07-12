@@ -1,4 +1,4 @@
-<header class="container-fluid">
+<header class="page-header container-fluid">
   <section class="row">
     <section class="col-sm-6">
       <h2 class="pull-left">Photos</h2>
@@ -9,10 +9,10 @@
   </section>
 </header>
 
-<section class="row">
+<section class="row photos-row">
   <% @photos.each do |photo| %>
-    <figure class="col-sm-2">
-      <%= image_tag photo.image.url(:thumb) %>
+    <figure class="col-sm-2 photo <% if photo.inactive == true %>inactive<% end %>">
+      <%= image_tag photo.image.url(:thumb), class: "img-responsive" %>
 
       <% if photo.inactive == false %>
       status : active
