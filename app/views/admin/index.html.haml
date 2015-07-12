@@ -1,49 +1,48 @@
 -if user_signed_in?
 
   %section.col-sm-3
-    %h4 Recently Uploaded Photos 
+    %h4 Recently Uploaded Photos
     -if @photos.any?
       - @photos.take(16).each do |p|
         = image_tag p.image.url(:thumb)
-          
+
   %section.col-sm-3
     %h4 Pages
     -if @pages.any?
       - @pages.each do |p|
         %h6= p.title
-        = link_to 'Edit', edit_page_path(p)       
-      %hr    
-      = link_to 'View All Pages', pages_path, class: "btn btn-primary btn-wide btn-embossed clear"        
+        = link_to 'Edit', edit_page_path(p)
+      %hr
+      = link_to 'View All Pages', pages_path, class: "btn btn-primary btn-wide btn-embossed clear"
     - else
-      Your have no pages, why not add some...!    
-     
+      Your have no pages, why not add some...!
+
   %section.col-sm-3
     %h4 Albums
     - if @albums.any?
       - @albums.each do |a|
         %h6= a.title
-        = link_to 'Edit', edit_album_path(a)   
-      %hr    
-      = link_to 'View All My Albbums', albums_path, class: "btn btn-primary btn-wide btn-embossed clear"        
-        
+        = link_to 'Edit', edit_album_path(a)
+      %hr
+      = link_to 'View All My Albums', albums_path, class: "btn btn-primary btn-wide btn-embossed clear"        
+
     - else
-      Your have no albums, why not add some...!    
-         
+      Your have no albums, why not add some...!
+
   %section.col-sm-3
-    %h4 Portfolios 
+    %h4 Portfolios
     - if @portfolios.any?
       - @portfolios.each do |p|
         %h6= p.title
-        = link_to 'Edit', edit_portfolio_path(p)   
-      %hr    
-      = link_to 'View All My Portfolios', portfolios_path, class: "btn btn-primary btn-wide btn-embossed clear"        
-                
-        
+        = link_to 'Edit', edit_portfolio_path(p)
+      %hr
+      = link_to 'View All My Portfolios', portfolios_path, class: "btn btn-primary btn-wide btn-embossed clear"
+
+
     - else
-      %p Your have no portfolios, why not add some...!      
+      %p Your have no portfolios, why not add some...!
       = link_to 'Create Your First Portfolio', new_portfolio_path, class: "btn btn-primary btn-wide btn-embossed clear"
-   
-- else 
+
+- else
   %section
     %h2 You must be logged in to view this page
-  

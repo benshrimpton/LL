@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
 <% if notice %>
 <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -41,28 +41,28 @@
       </ul>
     </div><!--/.nav-collapse -->
   </div>
-</nav>      
-<% if user_signed_in? %>     
+</nav>
+<% if user_signed_in? %>
 <section class="container-fluid">
   <section class="row">
-    
+
     <div class="col-sm-2 sidebar">
       <ul class="nav nav-sidebar">
-        <li><a href="/admin">Home</a></li>
-        <li><a href="/admin/portfolios">Portfolios</a></li>
-        <li><a href="/albums">Albums</a></li>
-        <li><a href="/photos">Photos</a></li>
-        <li><a href="/settings">Settings</a></li>
-        <li><a href="/pages">Pages</a></li>
-        <li><a href="/navs">Navigation</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><%= link_to 'Portfolios', portfolios_path %></li>
+        <li><%= link_to 'Albums', albums_path %></li>
+        <li><%= link_to 'Photos', photos_path %></li>
+        <li><%= link_to 'Pages', portfolios_path %></li>
+        <li><%= link_to 'Navigation', navs_path %></li>
+        <li><%= link_to 'Settings', settings_path %></li>
       </ul>
-    </div>    
-<% end %>       
+    </div>
+<% end %>
     <main class="col-sm-10">
     <%= yield %>
     </main>
-    
+
   </section>
-</section> 
+</section>
 </body>
 </html>

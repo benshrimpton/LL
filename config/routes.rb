@@ -1,28 +1,24 @@
 Rails.application.routes.draw do
-  
-  root 'home#index'
-  
-  resources :navs
 
-  resources :pages
+  root 'home#index'
+
+
+  scope '/admin' do
+    resources :navs
+    resources :pages
+    resources :albums
+    resources :users
+    resources :settings
+    resources :photos
+    resources :portfolios
+  end
 
   devise_for :users
-  
-  resources :users
 
-  resources :settings
-
-  resources :photos
-
-  resources :portfolios
-
-  resources :albums
-  
-  
   get 'admin' => 'admin#index'
-  get 'admin/portfolios' => 'portfolios#index'
-  get 'admin/portfolios/:id/edit' => 'portfolios#update'
-  
+  # get 'admin/portfolios' => 'portfolios#index'
+  # get 'admin/portfolios/:id/edit' => 'portfolios#update'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
