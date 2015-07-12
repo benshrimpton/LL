@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712024808) do
+ActiveRecord::Schema.define(version: 20150712030445) do
 
   create_table "album_portfolios", force: true do |t|
     t.integer  "album_id"
@@ -27,11 +27,9 @@ ActiveRecord::Schema.define(version: 20150712024808) do
     t.datetime "updated_at"
     t.text     "url_key"
     t.integer  "user_id"
-    t.integer  "portfolio_id"
-    t.boolean  "inactive",     default: false, null: false
+    t.boolean  "inactive",   default: false, null: false
   end
 
-  add_index "albums", ["portfolio_id"], name: "index_albums_on_portfolio_id"
   add_index "albums", ["user_id"], name: "index_albums_on_user_id"
 
   create_table "navs", force: true do |t|
