@@ -1,20 +1,25 @@
-<header class="page-header">
-  <h2 class="pull-left">Photos</h2>
-  <%= link_to '+ New Photo', new_photo_path,:class => "btn btn-primary pull-right btn-wide btn-embossed" %>
-  <div class="clear"/>
+<header class="container-fluid">
+  <section class="row">
+    <section class="col-sm-6">
+      <h2 class="pull-left">Photos</h2>
+    </section>
+    <section class="col-sm-6">
+      <%= link_to '+ New Photo', new_photo_path,:class => "btn btn-primary pull-right btn-wide btn-embossed" %>
+    </section>
+  </section>
 </header>
 
 <section class="row">
   <% @photos.each do |photo| %>
     <figure class="col-sm-2">
       <%= image_tag photo.image.url(:thumb) %>
-      
+
       <% if photo.inactive == false %>
       status : active
       <% else %>
       status : inactive
       <% end %>
-       
+
      <figcaption>
       <div class="actions">
         <b><%= photo.title %></b><br>
@@ -26,6 +31,3 @@
     </figure>
   <% end %>
 </section>
-
-
-
