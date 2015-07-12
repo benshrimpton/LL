@@ -1,35 +1,47 @@
 -if user_signed_in?
 
-  %section
+  %section.col-sm-3
     %h4 Recently Uploaded Photos 
     -if @photos.any?
       - @photos.take(16).each do |p|
         = image_tag p.image.url(:thumb)
           
-  %section
+  %section.col-sm-3
     %h4 Pages
     -if @pages.any?
       - @pages.each do |p|
-        = p.title
+        %h6= p.title
+        = link_to 'Edit', edit_page_path(p)       
+      %hr    
+      = link_to 'View All Pages', pages_path, class: "btn btn-primary btn-wide btn-embossed clear"        
     - else
       Your have no pages, why not add some...!    
      
-  %section
+  %section.col-sm-3
     %h4 Albums
     - if @albums.any?
       - @albums.each do |a|
-        = a.title
+        %h6= a.title
+        = link_to 'Edit', edit_album_path(a)   
+      %hr    
+      = link_to 'View All My Albbums', albums_path, class: "btn btn-primary btn-wide btn-embossed clear"        
+        
     - else
       Your have no albums, why not add some...!    
          
-  %section 
+  %section.col-sm-3
     %h4 Portfolios 
     - if @portfolios.any?
-      - @portfolios.each do |port|
-        = port.title
+      - @portfolios.each do |p|
+        %h6= p.title
+        = link_to 'Edit', edit_portfolio_path(p)   
+      %hr    
+      = link_to 'View All My Portfolios', portfolios_path, class: "btn btn-primary btn-wide btn-embossed clear"        
+                
+        
     - else
-      Your have no portfolios, why not add some...!      
-    
+      %p Your have no portfolios, why not add some...!      
+      = link_to 'Create Your First Portfolio', new_portfolio_path, class: "btn btn-primary btn-wide btn-embossed clear"
    
 - else 
   %section

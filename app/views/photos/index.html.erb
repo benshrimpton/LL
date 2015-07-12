@@ -1,6 +1,6 @@
 <header class="page-header">
   <h2 class="pull-left">Photos</h2>
-  <%= link_to '+ New Photo', new_photo_path,:class => "btn btn-primary pull-right" %>
+  <%= link_to '+ New Photo', new_photo_path,:class => "btn btn-primary pull-right btn-wide btn-embossed" %>
   <div class="clear"/>
 </header>
 
@@ -8,10 +8,11 @@
   <% @photos.each do |photo| %>
     <figure class="col-sm-2">
       <%= image_tag photo.image.url(:thumb) %>
+      
       <% if photo.inactive == false %>
-      active
+      status : active
       <% else %>
-      inactive
+      status : inactive
       <% end %>
        
      <figcaption>

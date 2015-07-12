@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711134821) do
+ActiveRecord::Schema.define(version: 20150711135318) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150711134821) do
     t.text     "url_key"
     t.integer  "user_id"
     t.integer  "portfolio_id"
+    t.boolean  "inactive",     default: false, null: false
   end
 
   add_index "albums", ["portfolio_id"], name: "index_albums_on_portfolio_id"
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150711134821) do
     t.text     "url_key"
     t.integer  "user_id"
     t.integer  "album_id"
+    t.boolean  "inactive",   default: false, null: false
   end
 
   add_index "portfolios", ["album_id"], name: "index_portfolios_on_album_id"

@@ -20,9 +20,13 @@
 
 
 function finished(){
+  //handle flash messages
   console.log("logg message")
   $('.alert-success').delay(2000).fadeOut(600);  
 }
 
 
-$(document).on("ready page:load", finished);;
+$(document).on("ready page:load", finished);
+
+//add boostrap checkobox to all checkbox falues
+$(':checkbox').radiocheck();

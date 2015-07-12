@@ -1,3 +1,4 @@
+%h2 Your Settings
 - if @settings.any?
   = @settings.each do |s|
     %P ID: #{s.id}
@@ -5,6 +6,8 @@
     %P Instragram : #{s.instagram_name}
     %P Twitter : #{s.twitter_name}
     %P GA : #{s.google_analytics}
+
+    = link_to 'Edit Settings', edit_setting_path(s), :class => "btn btn-primary btn-wide btn-embossed"
 - else
-  = link_to '+ New Setting', new_setting_path, :class => "btn btn-primary"
+  = link_to '+ New Setting', new_setting_path, :class => "btn btn-primary btn-wide btn-embossed"
   

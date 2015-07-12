@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :facebook_name %><br>
-    <%= f.text_field :facebook_name %>
+  <div class="form-group">
+    <%= f.label :facebook_name %>
+    <%= f.text_field :facebook_name, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :instagram_name %><br>
-    <%= f.text_field :instagram_name %>
+  <div class="form-group">
+    <%= f.label :instagram_name %>
+    <%= f.text_field :instagram_name, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :twitter_name %><br>
-    <%= f.text_field :twitter_name %>
+  <div class="form-group">
+    <%= f.label :twitter_name %>
+    <%= f.text_field :twitter_name, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :google_analytics %><br>
-    <%= f.text_field :google_analytics %>
+  <div class="form-group">
+    <%= f.label :google_analytics %>
+    <%= f.text_field :google_analytics, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "+ Save Settings",  class: "btn btn-primary btn-embossed btn-wide" %>
   </div>
 <% end %>
