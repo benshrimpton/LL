@@ -1,10 +1,10 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
-  
+
   respond_to :html
 
   def index
-    @pages = Page.all
+    @pages = current_user.pages.all
     respond_with(@pages)
   end
 

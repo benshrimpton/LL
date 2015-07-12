@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    @albums = current_user.albums.all
   end
 
   # GET /albums/1
@@ -26,7 +26,7 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     @album.user = current_user
-    
+
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }

@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios
   # GET /portfolios.json
   def index
-    @portfolios = Portfolio.all
+    @portfolios = current_user.portfolios.all
   end
 
   # GET /portfolios/1
@@ -24,9 +24,8 @@ class PortfoliosController < ApplicationController
   # POST /portfolios
   # POST /portfolios.json
   def create
-    @portfolio.user = current_user
     @portfolio = Portfolio.new(portfolio_params)
-
+    @portfolio.user = current_user
 
     respond_to do |format|
       if @portfolio.save

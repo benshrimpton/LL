@@ -1,9 +1,8 @@
 class AdminController < ApplicationController
   def index
-    @photos= Photo.all
-    @pages = Page.all
-    @settings = Setting.first
-    @albums = Album.all
-    @portfolios = Portfolio.all
-  end    
+    @photos = current_user.photos.all
+    @pages =  current_user.pages.all
+    @albums = current_user.albums.all
+    @portfolios = current_user.portfolios.all
+  end
 end
