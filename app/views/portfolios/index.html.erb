@@ -11,7 +11,7 @@
   <tbody>
     <% @portfolios.each do |portfolio| %>
       <tr>
-        <td><%= portfolio.title %></td>
+        <td><%= portfolio.title %><span><%=  %></span></td>
         <td>
         <% if portfolio.inactive == false %>
         status : active

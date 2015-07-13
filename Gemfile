@@ -29,6 +29,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'bootsy'
 gem "paperclip", "~> 4.3"
+gem "kaminari"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

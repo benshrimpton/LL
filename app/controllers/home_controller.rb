@@ -4,6 +4,6 @@ class HomeController < ApplicationController
     @settings = Setting.first
     @albums = Album.all
     @portfolios = Portfolio.all
-    @photos = Photo.all
-  end    
+    @photos = current_user.photos.all
+  end
 end

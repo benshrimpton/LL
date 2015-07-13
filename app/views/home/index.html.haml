@@ -4,9 +4,9 @@
     = current_user.id
 
 
-  %h4 Recently Uploaded Photos
+  %h4 Recently Uploaded Photos by #{current_user.email}
   -if @photos.any?
-    - @photos.take(16).each do |p|
+    - @photos.take(6).each do |p|
       = image_tag p.image.url(:thumb)
 
   %hr

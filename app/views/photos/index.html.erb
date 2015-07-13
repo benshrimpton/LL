@@ -8,7 +8,9 @@
     </section>
   </section>
 </header>
-
+<section>
+   <%= paginate @photos %>
+</section>
 <section class="row photos-row">
   <% @photos.each do |photo| %>
     <figure class="col-sm-2 photo <% if photo.inactive == true %>inactive<% end %>">
@@ -30,4 +32,8 @@
      </figcaption>
     </figure>
   <% end %>
+  
 </section>
+<footer class="">
+  <%= paginate @photos %>
+</footer>
