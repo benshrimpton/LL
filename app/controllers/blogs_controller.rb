@@ -42,6 +42,7 @@ class BlogsController < ApplicationController
     end
 
     def blog_params
-      params[:blog]
+      #params[:blog]
+      params.require(:blog).permit(:user_id)
     end
 end
