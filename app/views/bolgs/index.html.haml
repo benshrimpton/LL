@@ -1,0 +1,19 @@
+%h1 Listing bolgs
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @bolgs.each do |bolg|
+      %tr
+        %td= link_to 'Show', bolg
+        %td= link_to 'Edit', edit_bolg_path(bolg)
+        %td= link_to 'Destroy', bolg, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Bolg', new_bolg_path
