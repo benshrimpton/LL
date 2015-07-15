@@ -6,5 +6,6 @@
         - @blog.errors.full_messages.each do |msg|
           %li= msg
 
+  = f.text_field :title, class: "form-control"
   .actions
     = f.submit 'Save'

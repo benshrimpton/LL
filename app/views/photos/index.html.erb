@@ -13,8 +13,8 @@
 </section>
 <section class="row photos-row">
   <% @photos.each do |photo| %>
-    <figure class="col-sm-2 photo <% if photo.inactive == true %>inactive<% end %>">
-      <%= image_tag photo.image.url(:thumb), class: "img-responsive" %>
+    <figure class="col-sm-1 photo <% if photo.inactive == true %>inactive<% end %>">
+      <%= image_tag photo.image.url(:thumb), class: "thumbnail img-responsive" %>
 
       <% if photo.inactive == false %>
       status : active

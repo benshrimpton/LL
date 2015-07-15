@@ -45,7 +45,6 @@
 <% if user_signed_in? %>
 <section class="container-fluid">
   <section class="row">
-
     <div class="col-sm-2 sidebar">
       <ul class="nav nav-sidebar">
         <li><a href="/admin">Admin</a></li>
@@ -53,6 +52,8 @@
         <li><%= link_to 'Portfolios', portfolios_path %></li>
         <li><%= link_to 'Albums', albums_path %></li>
         <li><%= link_to 'Pages', pages_path %></li>
+        <li><%= link_to 'Blogs', blogs_path %></li>
+        <li><%= link_to 'Posts', posts_path %></li>
         <li><%= link_to 'Navigation', navs_path %></li>
         <li><%= link_to 'Settings', settings_path %></li>
       </ul>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :posts
+
   resources :blogs
 
   root 'home#index'
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
     resources :settings
     resources :photos
     resources :portfolios
+    resources :blogs
   end
 
   devise_for :users

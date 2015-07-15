@@ -1,13 +1,13 @@
 -if user_signed_in?
   .page-header
-    = current_user.email
-    = current_user.id
+    .span User Email : #{current_user.email}
+    .span User ID : #{current_user.id}
 
 
   %h4 Recently Uploaded Photos by #{current_user.email}
   -if @photos.any?
     - @photos.take(6).each do |p|
-      = image_tag p.image.url(:thumb)
+      = image_tag p.image.url(:thumb), class:"thumbnail img-responsive"
 
   %hr
 

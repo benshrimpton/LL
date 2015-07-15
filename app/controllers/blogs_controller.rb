@@ -10,6 +10,8 @@ class BlogsController < ApplicationController
 
   def show
     respond_with(@blog)
+    @blog_posts = Post.all
+    @posts = @blog_posts.find_by(params[:id])
   end
 
   def new
@@ -22,6 +24,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
+    #@blog.user = current_user
     @blog.save
     respond_with(@blog)
   end
@@ -43,6 +46,6 @@ class BlogsController < ApplicationController
 
     def blog_params
       #params[:blog]
-      params.require(:blog).permit(:user_id)
+      params.require(:blog).permit(:user_id, :title, :text, :posts_id)
     end
 end

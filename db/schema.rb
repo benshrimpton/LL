@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714041359) do
+ActiveRecord::Schema.define(version: 20150715042408) do
 
   create_table "album_portfolios", force: true do |t|
     t.integer  "album_id"
@@ -35,12 +35,13 @@ ActiveRecord::Schema.define(version: 20150714041359) do
   create_table "blogs", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
+    t.integer  "posts_id"
+    t.integer  "post_id"
   end
 
-  create_table "bolgs", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "blogs", ["post_id"], name: "index_blogs_on_post_id"
+  add_index "blogs", ["posts_id"], name: "index_blogs_on_posts_id"
 
   create_table "navs", force: true do |t|
     t.string   "title"
@@ -94,6 +95,16 @@ ActiveRecord::Schema.define(version: 20150714041359) do
 
   add_index "portfolios", ["album_id"], name: "index_portfolios_on_album_id"
   add_index "portfolios", ["user_id"], name: "index_portfolios_on_user_id"
+
+  create_table "posts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "text"
+    t.integer  "blog_id"
+  end
+
+  add_index "posts", ["blog_id"], name: "index_posts_on_blog_id"
 
   create_table "settings", force: true do |t|
     t.string   "title"
