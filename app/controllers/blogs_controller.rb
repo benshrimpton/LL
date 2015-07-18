@@ -10,8 +10,7 @@ class BlogsController < ApplicationController
 
   def show
     respond_with(@blog)
-    @blog_posts = Post.all
-    @posts = @blog_posts.find_by(params[:id])
+    @blog = Blog.find_by(params[:id])
   end
 
   def new

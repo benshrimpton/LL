@@ -1,10 +1,17 @@
 %p#notice= notice
 
 
-= link_to 'Edit', edit_blog_path(@blog)
+= link_to 'Edit Blog Name', edit_blog_path(@blog)
 \|
 = link_to 'Back', blogs_path
 
+.page-header
+  = link_to 'New Post', new_post_path, class: "btn btn-primary"
 .container
-  - @blog_posts.each do |b|
-    %h2= b.title
+  %h1 Blog Name : #{@blog.title}
+  %hr
+  %h2 Blog Posts
+  .row  
+    - @blog.posts.each do |p| 
+      = p.title
+      = link_to 'Edit', edit_post_path(p)
