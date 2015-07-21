@@ -1,15 +1,23 @@
-= form_for @post do |f|
-  - if @post.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
-      %ul
-        - @post.errors.full_messages.each do |msg|
-          %li= msg
+.container
+  .row
+    .col-sm-6
+      = form_for @post do |f|
+        - if @post.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+            %ul
+              - @post.errors.full_messages.each do |msg|
+                %li= msg
 
-  = f.label :blog_id       
-  = f.text_field :blog_id, class: "form-control"  
+        %select.form-control
+          - @posts.each do |b|
+            %option= b.title    
 
-  = f.label :title           
-  = f.text_field :title, class: "form-control"       
-  .actions
-    = f.submit 'Save'
+        = f.label :blog_id       
+        = f.text_field :blog_id, class: "form-control"  
+
+        = f.label :title           
+        = f.text_field :title, class: "form-control"  
+             
+        .actions
+          = f.submit 'Save'

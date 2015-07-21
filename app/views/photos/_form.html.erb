@@ -33,6 +33,14 @@ http://5minutenpause.com/blog/2013/09/04/multiple-file-upload-with-jquery-rails-
   <div class="form-group">
     <%= f.label :inactive %><br>
     <%= f.text_field :inactive, :class => "form-control" %>
+ <label>Active</label>
+    <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-id-custom-switch-01 bootstrap-switch-on">
+     
+      <div class="bootstrap-switch-container">
+        <span class="bootstrap-switch-handle-on bootstrap-switch-primary">ON</span><label class="bootstrap-switch-label">&nbsp;</label>
+        <span class="bootstrap-switch-handle-off bootstrap-switch-default">OFF</span>
+        <input type="checkbox" checked="" data-toggle="switch" id="custom-switch-01">
+      </div></div>
   </div>
   <div class="form-group">
     <%= f.label :title %><br>

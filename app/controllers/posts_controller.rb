@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @posts = Post.all
     respond_with(@post)
   end
 
