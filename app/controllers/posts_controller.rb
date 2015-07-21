@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @blogs = Blog.all
   end
 
   def create

@@ -9,15 +9,21 @@
               - @post.errors.full_messages.each do |msg|
                 %li= msg
 
-        %select.form-control
-          - @posts.each do |b|
-            %option= b.title    
+        
+        .form-group  
+          %h2.page-header= @post.title      
+          .span Belongs to : Blog Id "#{@post.blog_id}"       
+          = f.label :blog_id, "Belongs to blog"        
+          %select.form-control
+            - @blogs.each do |b|
+              %option{value: b.id}= b.title    
+ 
+        .form-group
+          = f.label :title           
+          = f.text_field :title, class: "form-control"  
 
-        = f.label :blog_id       
-        = f.text_field :blog_id, class: "form-control"  
-
-        = f.label :title           
-        = f.text_field :title, class: "form-control"  
+          = f.label :text , "Blog text"          
+          = f.text_area :text, class: "form-control"          
              
-        .actions
-          = f.submit 'Save'
+        .form-group
+          = f.submit 'Save', class:'btn btn-primary btn-embossed'
