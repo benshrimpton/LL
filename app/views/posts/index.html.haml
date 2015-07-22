@@ -3,18 +3,23 @@
 %table.table.table-striped
   %thead
     %tr
-      %th
-      %th
+      %th Title
+      %th Blog Id
       %th
 
   %tbody
     - @posts.each do |post|
       %tr
-        %td= post.title
-        %td= post.blog_id
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td
+          = post.title
+        %td
+          = post.blog_id
+        %td
+          = link_to 'Show', post
+        %td
+          = link_to 'Edit', edit_post_path(post)
+        %td
+          = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

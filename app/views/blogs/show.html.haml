@@ -13,5 +13,5 @@
   %h2 Blog Posts
   .row  
     - @blog.posts.each do |p| 
-      = p.title
+      %h3= p.title
       = link_to 'Edit', edit_post_path(p)
