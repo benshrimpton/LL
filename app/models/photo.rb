@@ -3,6 +3,8 @@ class Photo < ActiveRecord::Base
   belongs_to :album
   belongs_to :portfolio
   belongs_to :user
+  has_many :albums , :through  => :album_photos
+
 
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "150x110#" },
   :default_url => "http://placehold.it/200x200"

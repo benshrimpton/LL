@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715042408) do
+ActiveRecord::Schema.define(version: 20150727194042) do
+
+  create_table "album_photos", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "album_id"
+    t.integer  "photo_id"
+    t.integer  "order"
+  end
 
   create_table "album_portfolios", force: true do |t|
     t.integer  "album_id"
@@ -19,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150715042408) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sort_order"
   end
 
   create_table "albums", force: true do |t|
@@ -72,15 +81,9 @@ ActiveRecord::Schema.define(version: 20150715042408) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
-    t.integer  "album_id"
-    t.integer  "portfolios_id"
-    t.integer  "pages_id"
     t.boolean  "inactive",           default: false, null: false
   end
 
-  add_index "photos", ["album_id"], name: "index_photos_on_album_id"
-  add_index "photos", ["pages_id"], name: "index_photos_on_pages_id"
-  add_index "photos", ["portfolios_id"], name: "index_photos_on_portfolios_id"
   add_index "photos", ["user_id"], name: "index_photos_on_user_id"
 
   create_table "portfolios", force: true do |t|
@@ -89,11 +92,9 @@ ActiveRecord::Schema.define(version: 20150715042408) do
     t.datetime "updated_at"
     t.text     "url_key"
     t.integer  "user_id"
-    t.integer  "album_id"
     t.boolean  "inactive",   default: false, null: false
   end
 
-  add_index "portfolios", ["album_id"], name: "index_portfolios_on_album_id"
   add_index "portfolios", ["user_id"], name: "index_portfolios_on_user_id"
 
   create_table "posts", force: true do |t|

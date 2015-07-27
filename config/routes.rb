@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :album_photos
+
   resources :posts
 
   resources :blogs

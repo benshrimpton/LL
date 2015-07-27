@@ -10,10 +10,15 @@
                 %li= msg
     
         .form-group  
-          %h2.page-header= @post.title      
-          .span Belongs to : Blog Id "#{@post.blog_id}"       
-          = f.label :blog_id, "Belongs to blog"        
+          %h2.page-header= @post.title 
+
+ 
+          -# if we have blogs asscociated
           - if @post.blog_id?
+
+            .span Belongs to : Blog Id "#{@post.blog_id}"       
+            = f.label :blog_id, "Belongs to blog"
+
             %select.form-control{name: "post[blog_id]"}
               - selected = @post.blog_id
               - @blogs.each do |b|

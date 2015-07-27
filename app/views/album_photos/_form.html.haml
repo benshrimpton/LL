@@ -1,0 +1,10 @@
+= form_for @album_photo do |f|
+  - if @album_photo.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@album_photo.errors.count, "error")} prohibited this album_photo from being saved:"
+      %ul
+        - @album_photo.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

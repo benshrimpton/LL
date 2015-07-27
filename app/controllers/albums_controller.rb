@@ -19,6 +19,8 @@ class AlbumsController < ApplicationController
 
   # GET /albums/1/edit
   def edit
+    @photos = Photo.all
+    @photos_in_album = Photo.find_by(:album_id)
   end
 
   # POST /albums

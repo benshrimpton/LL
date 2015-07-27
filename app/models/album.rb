@@ -1,7 +1,7 @@
 class Album < ActiveRecord::Base
   before_save :set_url_key
   belongs_to :user
-  has_many :photos
+  has_many :photos , :through  => :album_photos
   has_many :album_portfolios
   has_many :portfolios, :through  => :album_portfolios
   belongs_to :nav

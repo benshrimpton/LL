@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def show
     respond_with(@post)
+    @blogs = Blog.all
   end
 
   def new
