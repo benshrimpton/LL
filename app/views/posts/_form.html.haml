@@ -14,15 +14,15 @@
 
  
           -# if we have blogs asscociated
-          - if @post.blog_id?
+          -# if @post.blog_id?
 
-            .span Belongs to : Blog Id "#{@post.blog_id}"       
-            = f.label :blog_id, "Belongs to blog"
+          .span Belongs to : Blog Id "#{@post.blog_id}"       
+          = f.label :blog_id, "Belongs to blog"
 
-            %select.form-control{name: "post[blog_id]"}
-              - selected = @post.blog_id
-              - @blogs.each do |b|
-                %option{value: b.id, selected: ("selected" if b.id == selected)}= b.title    
+          %select.form-control{name: "post[blog_id]"}
+            - selected = @post.blog_id
+            - @blogs.each do |b|
+              %option{value: b.id, selected: ("selected" if b.id == selected)}= b.title    
    
         .form-group
           = f.label :title           

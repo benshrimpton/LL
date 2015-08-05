@@ -10,6 +10,8 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
+    @photos = AlbumPhoto.all
+    @photos_in_album = AlbumPhoto.find_by(:album_id)
   end
 
   # GET /albums/new
@@ -72,6 +74,6 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:title, :url_key, :user_id, :portfolio_id, :inactive )
+      params.require(:album).permit(:title, :url_key, :user_id, :portfolio_id, :inactive, :photo_id)
     end
 end

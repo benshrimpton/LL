@@ -1,4 +1,9 @@
+
 -if user_signed_in?
+
+  - @all_photos.each do |p|
+    = image_tag p.image.url(:thumb), class:"thumbnail img-responsive"
+
   .page-header
     .span User Email : #{current_user.email}
     .span User ID : #{current_user.id}

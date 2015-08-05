@@ -6,7 +6,15 @@
 </p>
 
 <section class="">
-  we will show the photos here, if no photos, we will prompt to upload / move form source.  
+
+
+  <%= @photos_in_album.each do |p| %>
+  p.id
+  <% end %>
+
+  <br>
+  <br>
+  we will show the photos here, if no photos, we will prompt to upload / move from source.  
 </section>
 
 <%= link_to 'Edit', edit_album_path(@album) %> |

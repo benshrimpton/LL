@@ -9,11 +9,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    respond_with(@post)
     @blogs = Blog.all
+    respond_with(@post)
   end
 
   def new
+    @blogs = Blog.all
     @post = Post.new
     @posts = Post.all
     respond_with(@post)
@@ -24,6 +25,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @blogs = Blog.all
     @post = Post.new(post_params)
     @post.save
     respond_with(@post)

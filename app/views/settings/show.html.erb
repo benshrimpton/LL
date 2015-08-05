@@ -1,9 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%= form_for(@setting) do |f| %>
+  <% if @setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@setting.errors.count, "error") %> prohibited this setting from being saved:</h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @setting.title %>
-</p>
+      <ul>
+      <% @setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= link_to 'Edit', edit_setting_path(@setting) %> |
-<%= link_to 'Back', settings_path %>
+  <div class="form-group">
+    <%= f.label :facebook_name %>
+    <%= f.text_field :facebook_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :instagram_name %>
+    <%= f.text_field :instagram_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :twitter_name %>
+    <%= f.text_field :twitter_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :google_analytics %>
+    <%= f.text_field :google_analytics, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "+ Save Settings",  class: "btn btn-primary btn-embossed btn-wide" %>
+  </div>
+<% end %>
