@@ -28,13 +28,6 @@
     <%= f.check_box :inactive, "data-toggle" => "checkbox" %>
   </div>
   
-  <div class="form-group">
-    <select name="album[photo_id]">
-    <% @photos.each do |photo| %>
-    <option value="<%= photo.id %>"><%= photo.title %><%= photo.id %></option>
-    <% end %>
-    </option>
-  </div>
 
 <div class="form-group">
   <%= f.submit "+ Save Album", :class => "btn btn-primary btn-embossed btn-wide" %>

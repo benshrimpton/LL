@@ -1,9 +1,9 @@
--if user_signed_in?
+- if user_signed_in?
 
   %section.col-sm-3
     %h4 Recently Uploaded Photos
-    -if @photos.any?
-      - @photos.take(6).each do |p|
+    - if @photos.any?
+      - @photos.each do |p|
         = image_tag p.image.url(:thumb), class: "img-responsive"
 
   %section.col-sm-3

@@ -20,8 +20,11 @@
 
 
 function finished(){
-  //handle flash messages
-  console.log("logg message")
+
+  console.log("logg message");
+  
+  //handle flash messages 
+
   $('.alert-success').delay(2000).fadeOut(600);  
 }
 

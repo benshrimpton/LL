@@ -5,13 +5,15 @@ class AlbumsController < ApplicationController
   # GET /albums.json
   def index
     @albums = current_user.albums.all
+    @photos_in_album = AlbumPhoto.find_by(:album_id)
   end
 
   # GET /albums/1
   # GET /albums/1.json
   def show
-    @photos = AlbumPhoto.all
-    @photos_in_album = AlbumPhoto.find_by(:album_id)
+    #@album = Album.find_by(params: => :album_id)
+    @album = current_user.albums.find(params[:id])
+    @album_photos = @album.album_photos.all
   end
 
   # GET /albums/new

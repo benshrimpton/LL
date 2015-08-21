@@ -16,6 +16,12 @@
   </thead>
 
   <tbody>
+   
+    <%# @albums_photos.each do |album| %>
+      <%# album.id %>
+    <%# end %>
+
+
     <% @albums.each do |album| %>
       <tr <% if album.inactive == true %>class="inactive"<% end %>>
         <td><%= album.id %></td>
@@ -28,8 +34,7 @@
         Inactive
         <% end %>
         <td>
-
-          <%= album.album_photos.each do |p| %>
+          <% album.album_photos.each do |p| %>
             Id of album_photos : "<%= p.id %>"<br>
           <% end %>
         </td>

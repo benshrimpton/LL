@@ -1,16 +1,9 @@
-<p>
+
   <strong>Title:</strong>
   <%= @photo.title %>
   <br>
   <%= image_tag @photo.image.url(:medium) %>
-  ALbums:
-
-  <%= @photo.album_photos.each do | ap | %>
-    <%= ap.id %>
-  <% end %>
-
-  <br>
-</p>
+  <br>Albums that this photo appears in: XXX
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>

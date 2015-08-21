@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
 
   private
     def all_photos
-      @all_photos = Photo.all
+      @all_photos = current_user.photos.all
     end
-
 end
