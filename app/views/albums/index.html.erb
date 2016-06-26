@@ -16,7 +16,7 @@
   </thead>
 
   <tbody>
-   
+
     <%# @albums_photos.each do |album| %>
       <%# album.id %>
     <%# end %>
@@ -33,11 +33,7 @@
         <% else %>
         Inactive
         <% end %>
-        <td>
-          <% album.album_photos.each do |p| %>
-            Id of album_photos : "<%= p.id %>"<br>
-          <% end %>
-        </td>
+
         </td>
         <td><%= link_to 'Show', album %></td>
         <td><%= link_to 'Edit', edit_album_path(album) %></td>

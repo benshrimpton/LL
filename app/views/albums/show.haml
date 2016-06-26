@@ -1,0 +1,20 @@
+%p#notice
+  = notice
+
+%h2 Album title: #{@album.title}
+%h3 Album id:  #{@album.id}
+
+%ul
+  -if @album_photos.present?
+    - @album_photos.each do |p|
+      %li= p.id
+
+
+
+
+%code
+  we will show the photos here, if no photos, we will prompt to upload / move from source.
+
+%br
+= link_to 'Edit', edit_album_path(@album), class: "btn btn-primary"
+= link_to 'Back', albums_path, class: "btn btn-default"

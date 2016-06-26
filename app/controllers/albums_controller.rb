@@ -13,7 +13,6 @@ class AlbumsController < ApplicationController
   def show
     #@album = Album.find_by(params: => :album_id)
     @album = current_user.albums.find(params[:id])
-    @album_photos = @album.album_photos.all
   end
 
   # GET /albums/new
