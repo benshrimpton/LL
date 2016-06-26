@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
   # GET /albums.json
   def index
     @albums = current_user.albums.all
-    @photos_in_album = AlbumPhoto.find_by(:album_id)
+    # @photos_in_album = AlbumPhoto.find_by(:album_id)
   end
 
   # GET /albums/1

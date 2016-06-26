@@ -31,6 +31,9 @@ gem 'bootsy'
 gem "paperclip", "~> 4.3"
 gem "kaminari"
 
+group :development do
+  gem "better_errors"
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -42,4 +45,3 @@ gem "kaminari"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
